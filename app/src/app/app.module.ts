@@ -6,23 +6,25 @@ import { UIRouterModule } from "@uirouter/angular";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UsersComponent } from './users/users.component';
+import { PostsComponent } from './posts/posts.component';
 
 const usersState = { name: "users", url: "/users", component: UsersComponent };
+const postsState = { name: "posts", url: "/posts/:id", component: PostsComponent };
+
 
 
 
 @NgModule({
-   declarations: [
-      AppComponent,
-      UsersComponent
-   ],
    imports: [
       BrowserModule,
-      AppRoutingModule,
       HttpClientModule,
-      UIRouterModule.forRoot({ states: [usersState], useHash: true })
+      UIRouterModule.forRoot({ states: [usersState, postsState], useHash: true })
    ],
-   providers: [],
+   declarations: [
+      AppComponent,
+      UsersComponent,
+      PostsComponent
+   ],
    bootstrap: [
       AppComponent
    ]
