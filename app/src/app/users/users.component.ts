@@ -19,7 +19,7 @@ export class UsersComponent implements OnInit {
   getUsers() {
     this.http.get('http://localhost:5000/project').subscribe(response => {
       this.users = response;
-      console.log(`response ${response}`);
+      console.log(`response ${JSON.stringify(response[0])}`);
     },error=>{console.log(`error:${error}`)});
   }
 
