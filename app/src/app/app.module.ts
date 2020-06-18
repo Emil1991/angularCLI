@@ -11,6 +11,8 @@ import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
 import { ForgotComponent } from './forgot/forgot.component';
 import { PicturesComponent } from './pictures/pictures.component';
+import {PagerService} from './PagerService'
+
 
 const usersState = { name: "users", url: "/users", component: UsersComponent };
 const picturesState = { name: "pics", url: "/pics", component: PicturesComponent };
@@ -36,6 +38,7 @@ const forgotPassState = { name: "forgot", url: "/forgot", component: ForgotCompo
       ForgotComponent,
       PicturesComponent
    ],
+   providers:[PagerService],
    bootstrap: [
       AppComponent
    ]
