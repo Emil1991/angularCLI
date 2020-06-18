@@ -7,10 +7,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UsersComponent } from './users/users.component';
 import { PostsComponent } from './posts/posts.component';
+import { SignupComponent } from './signup/signup.component';
+import { LoginComponent } from './login/login.component';
+import { ForgotComponent } from './forgot/forgot.component';
 
 const usersState = { name: "users", url: "/users", component: UsersComponent };
 const postsState = { name: "posts", url: "/posts/:id", component: PostsComponent };
-
+const signupState = { name: "signup", url: "/signup", component: SignupComponent };
+const loginState = { name: "login", url: "/login", component: LoginComponent };
+const forgotPassState = { name: "forgot", url: "/forgot", component: ForgotComponent };
 
 
 
@@ -18,12 +23,12 @@ const postsState = { name: "posts", url: "/posts/:id", component: PostsComponent
    imports: [
       BrowserModule,
       HttpClientModule,
-      UIRouterModule.forRoot({ states: [usersState, postsState], useHash: true })
+      UIRouterModule.forRoot({ states: [usersState, postsState,signupState,loginState,forgotPassState], useHash: true })
    ],
    declarations: [
       AppComponent,
       UsersComponent,
-      PostsComponent
+      PostsComponent,
    ],
    bootstrap: [
       AppComponent
